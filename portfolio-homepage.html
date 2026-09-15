@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description">
+    <link href="https://api.fontshare.com/v2/css?f[]=synonym@400&f[]=amulya@700&display=swap" rel="stylesheet">
+    <title>My portfolio</title>
+    <link rel="stylesheet" href="prac.css"> 
+</head>
+<body>
+<header>
+    <img src="Images/EA-TECH_LOGO.avif" alt="EA-TECH Logo">
+    <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#Works">Works</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="contact-page.html">Contact</a></li>
+        </ul></nav></header>
+<main>
+    <section id="hero" class="reveal-on-scroll">
+        <div class="hero-text">
+        <h1>I don't just build websites.</h1>
+        <h1><span>I solve digital problems.</span></h1>
+        <p>From business websites and online stores to WordPress solutions and SEO, I help growing businesses build a stronger presence online.</p>
+        <div id="hero-btn">
+           <div class="book-btn">
+             <a href="contact-page.html" class="cta">Book a call</a>
+           </div>
+            <div class="work-btn">
+                        <a href="#Works" class="cta">View my work</a>
+                        </div>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="Images/Elvisabang.avif" alt="A human dressed in a black cape">
+        </div>
+    </section>
+    <section id="Works" class="reveal-on-scroll">
+        <h3>Selected work</h3>
+        <div class="cards-container">
+        <div class="box box1">
+            <h3>Davkem Website</h3>
+            <p>Built Davkem a custom ordering platform with a fast, smooth checkout flow and whatsapp-confirmed offline payments</p>
+        </div>
+        <div class="box box2">
+            <h3>Citybite Website</h3>
+            <p>Rebuilt Citybite's fragile elementor site into a custom, stable ordering platform - fixing recurring crashes and hand-coding the header, footer, and woocommerce styling.</p>
+        </div>
+        <div class="box box3">
+            <h3>Leadup.ng</h3>
+            <p>Mobile-first and SEO-Optimised, designed to convert organic search into quality leads</p>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="reveal-on-scroll">
+        <h4>What I Do</h4>
+        <div class="skill-set"> 
+       <div class="skill1">
+                <h6>E-commerce & ordering</h6>
+                <p>Online stores and ordering systems that make it easier  for customers to buy.</p>
+            </div>
+            <div class="skill2">
+                <h6>Website Management</h6>
+                <p>Helping businesses manage their websites, makin sure everything works smoothly.</p>
+                </div>
+        <div class="skill3">
+                <h6>Wordpress solutions</h6>
+                <p>Customization, troubleshooting, optimitazion, and fixing things that aren't working.</p>
+            </div>
+        <div class="skill4">
+                <h6>SEO & Digital growth</h6>
+                <p>Helping your website to become easier to find and more useful to potential customers.</p>
+            </div>
+        </div>
+    </section>
+    <section id="About" class="reveal-on-scroll">
+    <div class="About-section">
+        <h5>About</h5>
+        <p>I'm a self-taught web developer and digital marketer focused on helping businesses making better use of the web.</p>
+        <p>I enjoy figuring out difficult problems, rebuilding things that aren't working, and finding practicals ways to turn ideas into functioning digital experience.</p>
+        <p>I don't believe a website should exist just to look good.</p>
+        <p>It should serve a purpose.</p>
+    </div>
+
+    <div class="how-I-work">
+        <h4>How I work</h4>
+        <div class="container-cards">
+            <div class="card card1">
+                <h3>Understand</h3>
+                <p>I start by understanding, and the problem we are trying to solve.</p>
+            </div>
+            <div class="card card2">
+                <h3>Solve</h3>
+                <p>I identify the simplest practical solution instead of adding complexity for the sake of it.</p>
+            </div>
+            <div class="card card3">
+                <h3>Build</h3>
+                <p>I turn the solution into functional, responsive digital experience.</p>
+            </div>
+            <div class="card card4">
+                <h3>Improve</h3>
+                <p>U test, refine, and look for ways to make the experience better.</p>
+            </div>
+        </div>
+    </div> <!-- 💡 THIS WAS MISSING! It closes .how-I-work -->
+</section>
+
+    <section id="Final-cta" class="reveal-on-scroll">
+        <div class="finalctabtn">
+        <h2>Have a digital problem to solve?</h2>
+        <p>Whether you need a new website, want to improve an existing one, or need help growing online, let's talk about what you're trying to achieve.</p>
+       <a href="contact-page.html" id="ctabtn">Let's work together</a>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer-content">
+        <p>&copy; <span id="year"></span> EA-TECH. All rights reserved.</p>
+    </div>
+</footer>
+    <script src="script.js" defer></script>
+
+</body>
+</html>

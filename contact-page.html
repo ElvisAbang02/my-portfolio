@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="prac.css"> 
+</head>
+<body>
+<header>
+    <img src="Images/EA-TECH_LOGO.avif" alt="EA-TECH Logo">
+    <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
+        <ul>
+            <li><a href="portfolio-homepage.html">Home</a></li>
+            <li><a href="portfolio-homepage.html#Works">Works</a></li>
+                        <li><a href="portfolio-homepage.html#About">About</a></li>
+            <li><a href="contact-page.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="main-bg">
+        <!-- The layout wrapper holding both left and right sides -->
+        <div class="page-container reveal-on-scroll">
+            
+            <!-- Left Side: Form Container -->
+            <div class="contact-form">
+                <h1>Get in touch</h1>
+                <form id="contact-form" action="submit" novalidate>
+                    <div class="input-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" placeholder="Enter Your Name" name="userName" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" placeholder="Enter Your email" name="userEmail" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phoneNumber">Phone Number:</label>
+                        <input type="tel" id="phoneNumber" placeholder="Enter Your Phone Number" name="userNumber" required>
+                    </div>
+                    
+                    <div class="input-group message-group">
+                        <label for="message">Leave a message:</label>
+                        <textarea id="message" name="userMessage"></textarea>
+                    </div>
+                    <button type="submit" class="myBtn">Submit</button>
+                                        <p id="form-status" role="status" aria-live="polite"></p>
+                                    </form>
+            </div>
+
+            <!-- Right Side: Info Container holding the 4 separate blocks -->
+            <div class="contact-info">
+                <div class="info info1">
+                    <h6>Address</h6>
+                    <p>Rijiya dorowa area, sokoto state, Nigeria</p>
+                </div>
+                <div class="info info2">
+                    <h6>Phone</h6>
+                    <p>08148464174</p>
+                </div>
+                <div class="info info3">
+                    <h6>Email</h6>
+                    <p>Abangelvis48@gmail.com</p>
+                </div>
+                <div class="info info4">
+                    <h6>Working Hours</h6>
+                    <p>Rijiya dorowa area, sokoto state, Nigeria</p>
+                </div>
+            </div>
+
+        </div> <!-- End of .page-container -->
+    </section>
+</main>
+    <script src="script.js" defer></script>
+</body>
+</html>

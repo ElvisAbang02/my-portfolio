@@ -1,0 +1,610 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #FFFFFF;
+  color: #111827;
+}
+:root{
+  --primary-blue: #1455D9;
+  --dark-blue: #0B1F3A;
+  --light-blue: #EEF5FF;
+  --gold: #C9A227;
+   --white: #FFFFFF;  
+  --muted: #4B5563; 
+}
+
+header{
+  display: flex;
+  height: 20vh;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5%;
+  background: var(--white);
+  border: var(--primary-blue) solid 2px;
+  border-radius: 12px;
+  position:sticky;
+  top: 0%;
+  z-index: 1000;
+}
+header img {
+    width: 100px;
+    height: auto;
+}
+footer{
+  background-color: var(--dark-blue);
+  text-align: center;
+  padding: 5px;
+  border-radius: 0px;
+}
+
+nav ul {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  justify-content: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 600;
+  word-spacing: 10px;
+  font-size: 16px;
+}
+
+#nav a {
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+#nav a:hover{
+  color: var(--primary-blue);
+}
+
+/* ===== Hamburger menu button (hidden on desktop) ===== */
+#menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+#menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--dark-blue);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+/* When the button has .open, turn it into an X */
+#menu-toggle.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+#menu-toggle.open span:nth-child(2) { opacity: 0; }
+#menu-toggle.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+/* ===== Sticky header state when scrolled ===== */
+header.scrolled {
+    background: var(--light-blue);
+    box-shadow: 0 4px 20px rgba(11, 31, 58, 0.12);
+}
+
+/* ===== Scroll reveal animation ===== */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Mobile responsive styles ===== */
+@media (max-width: 768px) {
+    #menu-toggle { display: flex; }
+
+    #nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 280px;
+        height: 100vh;
+        background: var(--white);
+        box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
+        padding-top: 90px;
+    }
+    #nav.open { right: 0; }
+
+    nav ul {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        padding: 0;
+    }
+
+    /* Stack the hero into a column on small screens */
+    #hero, #About { flex-direction: column; }
+    .skill-set, .cards-container, .container-cards {
+        grid-template-columns: 1fr;
+    }
+    .page-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+.box {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 10px;
+    border: 1px solid #dce5f2;
+    min-height: 230px;
+}
+.box p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.box h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--dark-blue);
+    font-size: 22px;
+}
+.box:hover{
+     transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(11, 31, 58, 0.08);
+}
+
+#Works {
+    padding: 90px 5%;
+    background: var(--light-blue);
+    
+}
+#Works > h3 {
+    margin: 0 0 40px;
+    text-align: center;
+    font-size: 36px;
+    color: var(--dark-blue);
+}
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 12px 30px rgba(11, 31, 58, 0.08);
+} 
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 90px 5%;
+    min-height: 700px;
+    
+    /* 🌄 1. Add the general background image here */
+    background-image: linear-gradient(rgba(120, 186, 232, 0.9), rgba(87, 112, 175, 0.9)), url('Images/main blue.avif');
+    background-size: cover;        /* Stretches image to fill the whole section */
+    background-position: center;   /* Centers the background image */
+    background-repeat: no-repeat;  /* Prevents tiling */
+}
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+.hero-image {
+    flex: 1;
+    max-width: 600px;
+}
+.hero-text h1 {
+    margin: 0;
+    font-size: 58px;
+    font-weight: 600;
+    line-height: 1.05;
+    color: var(--white);
+}
+.hero-text h1 span {
+    color: var(--primary-blue);
+}
+.hero-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+.hero-text p {
+    max-width: 550px;
+    margin: 25px 0;
+    color: var(--white);
+    font-size: 17px;
+    line-height: 1.6;
+}
+ .cta {
+    display: inline-block;
+    text-decoration: none;      /* Removes the underline */
+    color: #000000;              /* White text color */
+    padding: 10px 20px;          /* Vertical and horizontal spacing inside the button */
+    border-radius: 8px;          /* Slightly rounded corners */
+    font-weight: bold;
+ }
+.book-btn .cta {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+.book-btn:hover{
+    transform: translateY(-2px);
+}
+.work-btn .cta {
+    border: 1px solid var(--primary-blue);
+    color: var(--primary-blue);
+    background: var(--white);
+}
+#hero-btn .cta:hover {
+    transform: translateY(-2px);
+    background-color: var(--light-blue);
+    color: #000000;
+}
+h3{
+  text-align: center;
+}
+
+#About {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1 part left text, 2 parts right cards */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 5%;
+}
+
+.skills{
+  padding: 30px 10px;
+  list-style: none;
+  line-height: 20px;
+}
+form{
+  background-color: #f2f2f2;
+  width: 500px;
+  margin-left: 20px;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 8px;
+}
+label{
+  color: #000;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input{
+ width: 50%;
+ padding: 10px;
+}
+
+textarea{
+  width: 100%;
+  height: 100px;
+}
+.myBtn{
+  width: 100%;
+  background-color: var(--primary-blue);
+  border-radius: 8px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.myBtn:hover{
+  transform: translateY(-3px);
+}
+/* Use Synonym (Regular 400) for body text and paragraphs */
+body, p {
+    font-family: 'Synonym', sans-serif;
+    font-weight: 400;
+}
+
+#hero-btn {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+#hero-btn .cta {
+    display: inline-block;
+    padding: 14px 24px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 6px;
+}
+#skills {
+    padding: 60px 5%;
+    background: var(--white);
+}
+#skills > h4 {
+    margin: 0 0 50px;
+    text-align: center;
+    font-size: 36px;
+    color: var(--dark-blue);
+}
+.skill-set {
+    display: grid;
+    grid-template-columns: repeat(4, 4fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.skill-set > div {
+    padding: 30px;
+    border: 1px solid #dce5f2;
+    border-radius: 10px;
+    background: var(--white);
+}
+.skill-set h6 {
+    margin: 0 0 15px;
+    font-family: 'Amulya', serif;
+    font-size: 20px;
+    color: var(--dark-blue);
+}
+.skill-set p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+.skill-set > div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-set > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(11, 31, 58, 0.08);
+}
+
+/* 2. Left Column (About Text) */
+.About-section {
+    background: #FFFFFF;
+    padding: 40px 20px;
+    border-radius: 16px;
+    border: 1px solid #dce5f2;
+}
+
+
+.About-section h5 {              /* Your HTML uses <h5> for "About" */
+    font-size: 36px;
+    color: #000000;
+    margin: 0 0 5px 0;
+}
+
+.About-section p {
+    margin: 0 0 20px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.how-I-work {
+    align-items: center;
+    background: var(--light-blue);
+    padding: 40px;
+    border-radius: 16px;
+}
+
+.how-I-work > h4 {
+    margin: 0 0 25px 0;
+    font-size: 32px;
+    color: var(--dark-blue);
+    text-align: left;            /* Left-align heading to match the left column layout */
+}
+
+/* 4. Inner Cards Layout (Inside Right Box) */
+.container-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Clean 2x2 grid layout */
+    gap: 20px;
+}
+
+
+.container-cards > .card {
+    padding: 25px;
+    border: 1px solid #dce5f2;
+    border-radius: 10px;
+    background: #FFFFFF;
+}
+
+.container-cards h3 {
+    margin: 0 0 12px;
+    font-family: 'Amulya', serif;
+    font-size: 18px;
+    color: var(--dark-blue);
+    text-align: left;            /* Left-aligns card titles to match text */
+}
+.container-cards p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;            /* Left-aligns card paragraph content */
+}
+
+#Final-cta {
+    padding: 10px 5%;
+    background: var(--light-blue);
+}
+
+.finalctabtn {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.finalctabtn h2 {
+    margin: 0 0 15px;
+    font-size: 36px;
+    color: #000;
+}
+
+.finalctabtn p {
+    margin: 0 0 15px;
+    color: #000000;
+    line-height:1;
+}
+
+#ctabtn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: var(--primary-blue);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700px;
+    border-radius: 6px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#ctabtn:hover {
+    transform: translateY(-3px);
+}
+
+.footer-content{
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+}
+
+/* Layout Wrapper */
+.page-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Form is slightly wider than info stack */
+    
+    /* ⬇️ INCREASE THIS VALUE TO ADD MORE SPACE ⬇️ */
+    gap: 50px;                       /* Changed from 30px to 50px for a wider gap */
+    
+    align-items: stretch;            /* Forces left and right boxes to be identical heights */
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: sans-serif;
+}
+
+
+/* Left Card: Form Wrapper */
+.contact-form {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form h1 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 2rem;
+}
+
+/* Form tag handles the actual content distribution */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;                  /* Fills up the full box height */
+    justify-content: space-between;/* Pushes input rows up and submit button down */
+    gap: 16px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.input-group input, 
+.input-group textarea {
+    padding: 12px;
+    border: 1px solid var(--white);
+    border-radius: 8px;
+    background-color: var(--white);
+    font-size: 0.95rem;
+}
+
+.input-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Styling the Blue Button at the bottom */
+.myBtn {
+    background-color: var(--primary-blue); /* Adjust color hex to match your layout's preferred blue */
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: auto; /* Guarantees button stays pinned to bottom edge */
+}
+
+/* Right Column: Stack Container */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;                     /* Vertical separation between individual info blocks */
+    height: 100%;
+}
+
+/* Individual Info Blocks */
+.info {
+    text-align: center;
+    background-color: var(--light-blue);     /* Light grey background for items 2, 3, and 4 */
+    border-radius: 12px;
+    flex: 1;                       /* Distributes empty height evenly across all 4 items */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 40px;
+}
+
+.info h6 {
+    margin: 0 0 6px 0;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+.info.info1 h6, 
+.info.info1 p {
+    color: #000000;                /* Inverse text for the accent block */
+}
+
+/* Form feedback message under the submit button */
+#form-status {
+    margin: 12px 0 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    min-height: 1.5em;             /* reserve space so layout doesn't jump */
+}
