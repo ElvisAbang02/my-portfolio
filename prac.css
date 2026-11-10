@@ -608,3 +608,105 @@ body, p {
     color: var(--primary-blue);
     min-height: 1.5em;             /* reserve space so layout doesn't jump */
 }
+
+/* Responsive adjustments */
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: auto;
+    min-height: 72px;
+    margin-top: 0;
+    padding: 12px 5%;
+  }
+
+  #hero {
+    flex-direction: column;
+    min-height: auto;
+    padding: 56px 5%;
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-image {
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .hero-image img {
+    height: auto;
+    max-height: 420px;
+  }
+
+  #hero-btn {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cards-container,
+  .skill-set {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #About {
+    grid-template-columns: 1fr;
+    padding: 48px 5%;
+  }
+
+  .how-I-work {
+    padding: 24px;
+  }
+
+  .page-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+
+  .contact-form form {
+    width: 100%;
+    margin: 0;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-container,
+  .skill-set,
+  .container-cards {
+    grid-template-columns: 1fr;
+  }
+
+  #Works,
+  #skills {
+    padding: 48px 5%;
+  }
+
+  #Works > h3,
+  #skills > h4,
+  .finalctabtn h2 {
+    font-size: 1.75rem;
+  }
+
+  .box,
+  .contact-form {
+    padding: 20px;
+  }
+
+  .finalctabtn p {
+    line-height: 1.5;
+  }
+}
